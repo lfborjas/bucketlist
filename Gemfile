@@ -10,6 +10,7 @@ gem 'thin' #To be able to rails s thin instead of effing webrick
 
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'devise'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :development, :test do

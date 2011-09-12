@@ -1,4 +1,3 @@
-Se me había olvidado compartirte esto, es lo que había escrito sobre bucket list:
 # Bucket list
 
 Bucket list es un servicio que permite a los usuarios **organizar** y realizar sus metas de vida.
@@ -59,3 +58,10 @@ En algún lugar deberá aparecer una opción para "Compartir lista"
 Si se identifica con Facebook, cada vez que el usuario agrege una meta por defecto se publicará en su perfil "Juan Perez added "Drive a Ferrari" to his bucket list".
 
 Como negocio podría darse acceso a una interfaz con la que rápidamente se puedan identificar palabras claves como "brazil" o "travel", así agencias de viaje podrían apuntar ventas específicas. Dentro de la página individual de la meta, después de las notas podría estar un enlace a "Learn how to do it" y en ella que aparezcan los enlaces patrocinados.
+
+##Para correrlo local
+Se asume que se tiene ruby 1.8.7 o >1.9.2 instalado, también [rubygems](http://rubygems.org/) y [bundler](http://gembundler.com/). Cumplidas estas dependencias, se puede proceder a ejecutar, dentro de la carpeta donde está este archivo
+
+    bundle install
+    rake db:migrate
+    rails s

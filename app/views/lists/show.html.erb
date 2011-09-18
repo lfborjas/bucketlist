@@ -1,0 +1,5 @@
+<%= form_for([@list, @goal], :remote => true) do |f| %>
+  <%= f.text_field :title, {:placeholder => "Add a goal"} %>
+  <%= f.submit %>
+<% end %>
+<ul id="goals"></ul>

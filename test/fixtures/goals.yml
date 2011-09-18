@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  list_id: 1
+  title: MyString
+  status: MyString
+
+two:
+  list_id: 1
+  title: MyString
+  status: MyString

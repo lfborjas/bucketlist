@@ -2,8 +2,9 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "that the default list is created" do
+    u = FactoryGirl.create :user
+    assert_not_nil u.list
   end
 end
 

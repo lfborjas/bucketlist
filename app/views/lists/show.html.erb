@@ -1,5 +1,12 @@
-<%= form_for([@list, @goal], :remote => true) do |f| %>
-  <%= f.text_field :title, {:placeholder => "Add a goal"} %>
-  <%= f.submit %>
+<% if @list.editable_by?(current_user) %>
+  <%= form_for([@list, @goal], :remote => true) do |f| %>
+    <%= f.text_field :title, {:placeholder => "Add a goal"} %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
-<ul id="goals"></ul>
+<ul id="goals">
+  <% @list.goals.each do |goal| %>
+    <li><%= goal.title  %></li>
+  <%end%>
+</ul>
+

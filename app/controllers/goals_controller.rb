@@ -6,7 +6,8 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.create params[:goal]
+    list = List.find params[:list_id]
+    @goal = list.goals.create params[:goal]
     respond_with @goal
   end
 

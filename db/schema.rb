@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110918225906) do
+ActiveRecord::Schema.define(:version => 20110919001720) do
 
   create_table "goals", :force => true do |t|
     t.integer  "list_id"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(:version => 20110918225906) do
     t.string   "status",     :default => "incomplete"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "goals_lists", :id => false, :force => true do |t|
+    t.integer "goal_id"
+    t.integer "list_id"
   end
 
   create_table "lists", :force => true do |t|

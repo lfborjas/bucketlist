@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  belongs_to :list
+  has_and_belongs_to_many :lists
 
   def complete?
     status == "complete"

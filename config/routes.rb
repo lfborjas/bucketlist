@@ -4,7 +4,11 @@ BucketList::Application.routes.draw do
 
   root :to => "home#index"
   resources :lists, :only => [:show] do
-    resources :goals, :except => [:new, :destroy, :edit]
+    resources :goals, :except => [:new, :destroy, :edit, :show] 
+  end
+
+  resources :goals, :only => [:show] do
+      get 'clone', :on => :member
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

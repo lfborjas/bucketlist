@@ -12,9 +12,16 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @goal = Goal.find params[:id]
+    respond_with @goal
   end
 
   def update
   end
-
+  
+  def clone
+    @goal = Goal.find params[:id]
+    current_user.list.goals << @goal
+    respond_with @goal
+  end
 end

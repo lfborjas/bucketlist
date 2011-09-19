@@ -1,1 +1,1 @@
-$("#goals").append("<li>"+"<%=@goal.title%>"+"</li>");
+$("#goals").append($("<li></li>").html('<%=raw link_to(@goal.title, goal_path(@goal))%>'));

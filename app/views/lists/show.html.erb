@@ -6,7 +6,7 @@
 <% end %>
 <ul id="goals">
   <% @list.goals.each do |goal| %>
-    <li><%= goal.title  %></li>
+    <li><%= link_to goal.title, goal_path(goal) %></li>
   <%end%>
 </ul>
 

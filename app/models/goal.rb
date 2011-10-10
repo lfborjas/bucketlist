@@ -1,5 +1,6 @@
 class Goal < ActiveRecord::Base
-  has_and_belongs_to_many :lists
+  has_many :appropriations
+  has_many :lists, :through => :appropriations
 
   def complete?
     status == "complete"

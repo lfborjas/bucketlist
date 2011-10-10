@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110919001720) do
+ActiveRecord::Schema.define(:version => 20111010045044) do
+
+  create_table "appropriations", :force => true do |t|
+    t.integer  "list_id"
+    t.integer  "goal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "goals", :force => true do |t|
     t.integer  "list_id"

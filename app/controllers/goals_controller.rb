@@ -12,7 +12,14 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = Goal.find params[:id]
+    @goal = if params[:list_id].present?
+              @appropriation = Appropriation.find_by_list_id_and_goal_id(params[:list_id], params[:id]) 
+              return redirect_to(goal_path(params[:id])) unless @appropriation
+              @appropriation.goal
+            else
+              @appropriation = nil
+              Goal.find params[:id]
+            end
     respond_with @goal
   end
 

@@ -1,4 +1,19 @@
 <h2><%= @goal.title %></h2>
-<%= link_to "Add to my list", clone_goal_path(@goal), :remote => true %>
+<% if user_signed_in? %>
+  <% unless current_user.list.goals.include?(@goal) %>
+    <%= link_to "Add to my list", clone_goal_path(@goal), :remote => true %>
+  <%end%>
+<%end%>
+<% if @appropriation %>
+  <ul id="notes">
+    <%= render :partial => 'note', :collection => @appropriation.notes %>
+  </ul>
+  <% if @appropriation.editable_by?(current_user)%>
+    <%= form_for([@appropriation, Note.new], :remote => true) do |f| %>
+      <%= f.text_field :content, {:placeholder => "Add note"} %>
+      <%= f.submit %>
+    <% end %>
+  <%end%>
+<%end%>
 
 

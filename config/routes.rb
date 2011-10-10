@@ -3,8 +3,13 @@ BucketList::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
 
   root :to => "home#index"
+
   resources :lists, :only => [:show] do
-    resources :goals, :except => [:new, :destroy, :edit, :show] 
+    resources :goals, :except => [:new, :destroy, :edit] 
+  end
+
+  resources :appropriations do
+    resources :notes
   end
 
   resources :goals, :only => [:show] do

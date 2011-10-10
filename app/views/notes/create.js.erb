@@ -1,0 +1,1 @@
+$("#notes").append('<%= raw render(:partial => 'goals/note', :locals => {:note => @note} ).gsub(/\s+/, ' ') %>');

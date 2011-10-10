@@ -1,6 +1,7 @@
 class List < ActiveRecord::Base
   belongs_to :user
-  has_and_belongs_to_many :goals
+  has_many :appropriations
+  has_many :goals, :through => :appropriations
 
   def editable_by?(user)
     self.user == user
